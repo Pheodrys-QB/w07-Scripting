@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -13,6 +12,7 @@ public class player : MonoBehaviour {
 
     private bool oscillatingEnabled = false;
     private bool oscillatingInProgress = false;
+    Renderer ren;
 
 
     private int points = 0;
@@ -30,6 +30,8 @@ public class player : MonoBehaviour {
         coroutine = CoDestroyAllTarget();
         transform.position = new Vector3(0, Random.Range(10f, 20f), 0);
         model = transform.GetChild(0).gameObject;
+        ren = model.GetComponent<Renderer>();
+
     }
 
     // Update is called once per frame
@@ -90,6 +92,12 @@ public class player : MonoBehaviour {
         GUI.Label(new Rect(10, 10, 100, 25), "Points: " + points, style);
     }
 
+    private void OnMouseOver() {
+        ren.material.color = Color.green;
+    }
+    private void OnMouseExit() {
+        ren.material.color = Color.white;
+    }
     IEnumerator CoDestroyAllTarget() {
 
         while (DestroyingEnabled) {

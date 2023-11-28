@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af00a5d3c7daa1149b37288a9745d29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 5
   spawning: {fileID: 2579171599116485550, guid: 36f9fe88f023df84ab54c8743a6750c4, type: 3}
 --- !u!54 &3196507359796893271
 Rigidbody:
@@ -210,7 +210,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &6304347396180713270
 PrefabInstance:
